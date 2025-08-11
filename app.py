@@ -1,10 +1,22 @@
 import streamlit as st
-import streamlit.components.v1 as components
+from streamlit_gtag import st_gtag
+
+st_gtag(
+    key="gtag_send_event_a",
+    id="G-4BGMRKV2LJ",
+    event_name="app_main_page",
+    params={
+        "event_category": "test_category_a",
+        "event_label": "test_label_a",
+        "value": 97,
+    },
+)
+#import streamlit.components.v1 as components
 
 # Include Google Analytics tracking code
-with open("google_analytics.html", "r") as f:
-    html_code = f.read()
-    components.html(html_code, height=0)
+#with open("google_analytics.html", "r") as f:
+#    html_code = f.read()
+#    components.html(html_code, height=0)
 
 st.title("Simple Analytics App")
 st.write("Welcome to the Simple Analytics App!")
